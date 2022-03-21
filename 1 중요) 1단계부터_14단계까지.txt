@@ -1,0 +1,454 @@
+
+※ 전체 구성 메모 : "구성조건_1) 대한천문대_Wireframe.jpg" 이미지 참고 바람
+
+Ⓐ Header : A.1. 로고, A.2. 메뉴 구성(메인 메뉴, 서브 메뉴)
+
+Ⓑ Main Image : B. 이미지 Slide (3개 이미지)
+
+Ⓒ Contents : C.1. 공지사항, C.2. 갤러리, C.3. 배너, C.4. 바로가기
+
+Ⓓ Footer : 로고(하단), 하단 메뉴, Copyright
+
+===================================================================
+[1단계] 레이아웃 작성하기 : index.html 파일 생성 후 다음의 내용을 소스 코딩합니다.
+                                  ["구성조건_1) 대한천문대_Wireframe.jpg" 이미지 참고 바람]
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>대한천문대</title>
+</head>
+
+<body>
+
+<!--==== 와이어프레임 왼쪽 시작 ====-->
+<header>
+   <div class="top"> <!-- top:logo와 menu 묶어줌 -->
+     <div class="logo">로고 자리</div>
+     <nav class="menu">메뉴 자리</nav>
+   </div>  <!-- top 끝 -->
+</header>
+<!--==== 와이어프레임 왼쪽 끝 ====-->
+
+<!--==== 와이어프레임 오른쪽 시작 ====-->
+<div class="bodywrap"> <!-- bodywrap:imgslide와 contents 묶어줌 -->
+   <div class="imgslide">이미지 슬라이드 자리</div>
+
+<div class="contents"> <!-- contents:tabmenu와 otherwrap 묶어줌 -->
+  <ul class="tabmenu"> <!-- tabmenu:공지사항과 갤러리 묶어줌 -->
+    <li>
+ 	<div class="notice">공지사항 자리</div>
+    </li>
+    <li>
+            <div class="gallery">갤러리 자리</div>
+    </li>
+  </ul>  <!-- tabmenu 끝 -->
+  
+  <div class="otherwrap"> <!-- otherwrap:banner와 shortcut 묶어줌 -->
+    <div class="banner">배너 자리 </div>    
+    <div class="shortcut">바로가기 자리</div>
+ </div> <!-- otherwrap 끝 -->
+</div> <!-- contents 끝 -->
+</div> <!-- bodywrap 끝 -->
+
+<footer>
+  <div class="btlogo">하단 로고 자리</div>
+  <div class="site"> <!-- site:btmenu와 copy 묶어줌 -->
+    <div class="btmenu">하단 메뉴 자리</div>
+    <div class="copy">Copyright 자리</div>               
+  </div> <!-- site 끝 -->
+</footer>
+<!--==== 와이어프레임 오른쪽 끝 ====-->
+
+</body>
+</html>
+
+===================================================================
+
+[실행 결과 확인] Chrome 실행 확인 : 1_1.jpg
+
+===================================================================
+
+[2단계] 레이아웃 영역에 CSS 스타일 지정하기 : css 폴더 생성 후 그 안에 style.css 파일 생성하고, 다음의 내용을 소스 코딩함
+
+@charset "utf-8";
+
+===================================================================
+
+[3단계] CSS 파일을 index.html 파일에 연결해 줌 : index.html 파일에 다음의 소스 내용을 추가해줌
+
+<link href="css/style.css" type="text/css" rel="stylesheet">
+
+===================================================================
+
+[4단계] 레이아웃 영역에 CSS 스타일 지정하기 : style.css 파일에 다음의 내용을 소스 코딩함 : CSS 리셋
+
+*{
+	margin:0 auto;
+	padding:0;
+	list-style:none;
+	font-family:"맑은 고딕";
+	color:#333333;
+}
+body{
+	width:1200px;
+	background-color:#ffffff;
+	font-size:20px;
+}
+a{
+	text-decoration:none;
+	display:block;
+}
+
+===================================================================
+
+[5단계] 레이아웃의 각 영역에 크기를 정하고 박스 요소들의 정렬(플로팅) 
+         CSS 스타일 지정하기 : style.css 파일에 다음의 내용을 소스 코딩함
+
+header{
+	height:100px; /*상단 높이*/
+	width:1200px; /*상단 너비*/
+}
+.top{             /*logo와 menu 묶어줌*/
+	height:100px; /*상단 로고와 메뉴가 들어가는 곳 높이*/
+	width:1200px; /*상단 로고와 메뉴가 들어가는 곳 너비*/
+}
+
+.bodywrap{        /*imgslide와 contents 묶어줌*/
+	height:500px; /*imgslide 높이 + contents 높이*/
+	width:1200px; /*imgslide 높이 + contents 너비*/
+}
+
+.imgslide{
+	height:300px; /*이미지 슬라이드 높이*/
+	width:1200px; /*이미지 슬라이드 너비*/
+}
+
+.contents{        /*tabmenu와 otherwrap 묶어줌*/
+	float:left; 
+	height:200px; /*콘텐츠들(탭메뉴,배너,바로가기) 높이*/
+	width:1200px; /*콘텐츠들(탭메뉴,배너,바로가기) 너비*/
+}
+
+footer{
+	height:100px; /*하단 높이*/
+	width:1200px; /*하단 너비*/
+	background-color:#30a3f3;
+}
+
+===================================================================
+
+[6단계] 로고(<div class="logo">)와 메뉴(<nav class="menu">)가 들어갈 영역에 대한 스타일 지정
+          : style.css 파일에서 클래스 선택자 .top 아래에 다음의 내용을 소스 코딩함
+
+.top{             /*logo와 menu 묶어줌*/
+	height:100px; /*상단 로고와 메뉴가 들어가는 곳 높이*/
+	width:1200px; /*상단 로고와 메뉴가 들어가는 곳 너비*/
+}
+
+/* .top 아래에 다음의 소스 코딩 해줌 */
+
+.logo{            /*로고 영역 스타일*/
+	float:left;
+	height:100px; /*로고 영역 높이*/
+	width:250px;  /*로고 영역 너비*/
+}
+
+.menu{            /*메뉴 영역 스타일*/
+	float:right;
+	height:100px;  /*메뉴 영역 높이*/
+	width:800px;  /*메뉴 영역 너비*/	
+}
+
+===================================================================
+
+[실행 결과 확인] Chrome 실행 확인 : 1_2.jpg
+
+===================================================================
+
+[7단계] 콘텐츠 영역에 들어가는 공지사항과 갤러리 탭을 묶어준 <ul class="tabmenu"> 영역과
+         배너와 바로가기 영역을 묶어준 <div class="otherwrap">,
+         그리고 배너와 바로가기 영역에 대한 스타일을 지정해 줍니다.
+         style.css 파일에서 클래스 선택자 .contents 를 찾아서 다음의 소스를 코딩해 줍니다.
+
+.contents{        /*tabmenu와 otherwrap 묶어줌*/
+	float:left; 
+	height:200px; /*콘텐츠들(탭메뉴,배너,바로가기) 높이*/
+	width:1200px; /*콘텐츠들(탭메뉴,배너,바로가기) 너비*/
+}
+
+/* .contents 아래에 다음의 소스 코딩을 해줌 */
+
+.tabmenu{         /*공지사항과 러리 탭메뉴가 들어가는 곳*/
+	float:left;
+	height:200px;
+	width:400px;
+}
+
+.otherwrap{       /*banner와 shortcut 묶어줌*/ 
+	float:right;
+	height:200px;  
+	width:800px;   
+}
+
+.banner{
+	float:left;
+	height:200px;  /*배너 영역 높이*/
+	width:400px;   /*배너 영역 너비*/
+}
+
+.shortcut{
+	float:right;
+	height:200px; /*바로가기 영역 높이*/ 
+	width:400px;  /*바로가기 영역 너비*/  
+}
+
+===================================================================
+
+[8단계] 푸터 영역에 들어가는 하단 로고 <div class="btlogo"> 영역,
+         그리고 하단 메뉴와 Copyright 영역을 묶어준 (<div class="site">)로 구분해 줍니다.
+         <div class="site"> 영역은 다시 하단 메뉴 <div class="btmenu">와
+         Copyright <div class="copy">로 구분해 줍니다.
+         각 영역에 대한 스타일 지정을 위해 style.css 파일에서
+         태그 타입(type) 선택자 footer 아래에 다음의 소스 코딩을 해줍니다.
+
+footer{
+	height:100px; /*하단 높이*/
+	width:1200px; /*하단 너비*/
+	background-color:#30a3f3;
+}
+
+/* 태그 타입(type) 선택자 footer 아래에 다음의 소스 코딩을 해줌 */
+
+.btlogo{         
+	float:left;
+	height:100px; /*로고 영역 높이*/
+	width:250px;  /*로고 영역 너비*/
+}
+
+.site{                /*btmenu와 copy 묶어줌*/
+	float:right;
+	height:100px; /*하단 메뉴와 Copyright 들어가는 곳 높이*/
+	width:600px;  /*하단 메뉴와 Copyright 들어가는 곳 너비*/
+}
+
+.btmenu{
+	height:50px;  /*하단 메뉴 높이*/
+	width:600px;  /*하단 메뉴 너비*/
+}
+
+.copy{
+	height:50px;  /*Copyright 높이*/
+	width:600px;  /*Copyright 너비*/ 
+}
+
+===================================================================
+
+[실행 결과 확인] Chrome 실행 확인 : 1_3.jpg
+
+===================================================================
+
+[9단계] index.html 파일의 로고 자리에 로고 이미지 추가하기 : 로고 이미지 추가를 위해 index.html 파일에서
+
+<div class="logo"> 로고 자리 </div> 부분을 찾아서, "로고 자리" 텍스트를 지우고,
+
+다음의 소스를 추가해 줍니다.
+
+  <div class="logo">
+  	<a href="#"><img src="images/logo.png" alt="로고"></a>
+  </div>
+
+===================================================================
+
+[실행 결과 확인] Chrome 실행 확인 : 1_4.jpg
+
+===================================================================
+
+[10단계] 로고 이미지에 스타일 지정하기 : 로고 이미지의 크기와 여백을 지정하기 위한 스타일 지정을 추가합니다.
+           
+           style.css 파일에서 클래스 선택자 .logo를 찾아서 다음의 소스를 코딩 추가해 줍니다.
+
+.logo{            /*로고 영역 스타일*/
+	float:left;
+	height:100px; /*로고 영역 높이*/
+	width:250px;  /*로고 영역 너비*/
+}
+
+/* .logo 밑에 다음의 소스 코딩을 추가해 줌 */
+
+.logo img{
+	float:left;
+	height:42px;
+	width:180px;
+	margin-top:30px;
+	margin-left:25px;
+}
+
+===================================================================
+
+[실행 결과 확인] Chrome 실행 확인 : 1_5.jpg
+
+===================================================================
+
+[11단계] index.html 파일의 메뉴 자리에 메뉴 추가하기 : 헤더 영역 안에 메뉴 영역으로 구분해 놓았던
+           <nav class="menu"> 메뉴 자리 </nav>부분 안에 "메뉴 자리" 텍스트를 지우고,
+           다음의 소스를 추가해 줍니다. 이때, 사이트 맵(Site map) 형식으로
+           메인 메뉴(Main menu)와 서브 메뉴(Sub menu)를 구분하여 소스 코딩을 추가해 줍니다.
+
+<nav class="menu">
+  <ul class="navi">
+    <li><a href="#">천문대소개</a>
+      <ul class="submenu">
+        <li><a href="#">인사말</a></li>
+        <li><a href="#">천문대소식</a></li>
+        <li><a href="#">오시는길</a></li>
+      </ul>
+    </li>
+    <li><a href="#">이용안내</a>
+      <ul class="submenu">
+        <li><a href="#">프로그램</a></li>
+        <li><a href="#">관람시간표</a></li>
+        <li><a href="#">이달의별자리</a></li>
+      </ul>
+    </li>
+    <li><a href="#">천문대예약</a>
+      <ul class="submenu">
+        <li><a href="#">관람예약</a></li>
+        <li><a href="#">예약확인</a></li>
+        <li><a href="#">예약취소</a></li>
+      </ul>
+    </li>
+    <li><a href="#">커뮤니티</a>
+      <ul class="submenu">
+        <li><a href="#">공지사항</a></li>
+        <li><a href="#">방문후기</a></li>
+        <li><a href="#">자유게시판</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+===================================================================
+
+[12단계] 메뉴에 스타일 지정하기 : 먼저 메뉴에 스타일을 지정하기 전에 와이어프레임
+
+("구성조건_1) 대한천문대_Wireframe.jpg" 이미지 참고 바람)의 메뉴 모양을 확인합니다.
+
+와이어프레임을 보면 메인 메뉴의 아래쪽으로 메인 메뉴와 같은 너비로 서브 메뉴가 펼쳐지도록 되어 있습니다.
+
+이것을 고려하여 메뉴에 스타일을 지정합니다.  style.css 파일에서 클래스 선택자 .menu 를 찾아서 그 안에
+
+아래와 같이 z-index 속성을 추가하여 메뉴 요소가 화면 상에서 가장 앞으로 보일 수 있도록 코딩 추가해 줍니다.
+
+[z-index 추가 코딩 전]
+
+.menu{            /*메뉴 영역 스타일*/
+	float:right;
+	height:100px;  /*메뉴 영역 높이*/
+	width:800px;  /*메뉴 영역 너비*/	
+}
+
+[z-index 추가 코딩 후]
+
+.menu{            /*메뉴 영역 스타일*/
+	float:right;
+	height:100px;  /*메뉴 영역 높이*/
+	width:800px;  /*메뉴 영역 너비*/
+	z-index:1;  
+}
+
+
+[중요 참고 사항]
+
+참고로, 메뉴는 슬라이드 다운 메뉴(Slide Down Box Menu)로 구성하도록 하고 있습니다. 슬라이드 다운 메뉴는
+
+메인 메뉴에 마우스를 올렸을 때(Mouse over) 서브 메뉴를 슬라이드 다운(Slide-Down)으로 보여주고,
+
+마우스가 메뉴에서 벗어나면(Mouse out) 슬라이드 업(Slide-Up)되면서 서브 메뉴를 숨겨주는 기능합니다.
+
+메뉴의 모양은 스타일시트에서 지정하며, 움직이는 동작 기능은 자바스크립트와 제이쿼리(jQuery)를 이용하여 구성합니다.
+
+
+===================================================================
+
+[13단계] 각 메인 메뉴의 스타일 지정하기 : style.css 문서에서 .menu 스타일 아래에 다음의 소스 내용을 추가해 줍니다.
+
+.menu{            /*메뉴 영역 스타일*/
+	float:right;
+	height:100px;  /*메뉴 영역 높이*/
+	width:800px;  /*메뉴 영역 너비*/
+	z-index:1;  
+}
+
+/* .menu 아래에 다음의 소스 코딩을 추가해 줌 */
+
+.navi{            /*전체 메뉴 스타일*/
+	float:right;
+	margin-top:30px;
+	margin-right:10px;
+}
+.navi>li{         /*각 메인 메뉴 스타일*/
+	float:left;
+}
+.navi>li>a{       /*각 메인 메뉴의 <a> 요소 스타일*/
+	height:40px;
+	width:180px;
+	line-height:40px; 
+	font-size:16px;
+	font-weight:bold;
+	text-align:center;
+	background-color:#0066ad;
+	color:#ffffff; 
+}
+.navi>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+	background-color:#30a3f3; 
+}
+
+===================================================================
+
+[실행 결과 확인] Chrome 실행 확인 : 1_6.jpg
+
+===================================================================
+
+[14단계] 서브 메뉴의 스타일을 지정하기 위해 .navi>li>a:hover 스타일 아래에 다음의 소스 내용을 추가해 줍니다.
+
+.navi>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+	background-color:#30a3f3; 
+}
+
+/* .navi>li>a:hover 아래에 다음의 소스 코드 추가해 줌 */
+
+.submenu{         /*서브 메뉴 영역 스타일*/
+	width:180px;
+	position:absolute;
+	/* 14단계 코딩 저장하고, Chrome 실행 후 display:none; 부분을 주석 처리해서 변화를 확인해 봄.
+	   인사말 위에 마우스를 올려서 a:hover 스타일도 확인해 봄 */
+	/* 즉, display:none; 부분을 주석 처리해서 변화를 확인해 보시기 바랍니다.
+               변화 확인 후에는 필히! 주석을 다시 풀어주시기 바람  */
+	display:none;
+	z-index:1;
+}
+
+
+.submenu>li>a{    /*각 서브 메뉴의 <a> 요소 스타일*/ 
+	height:35px;
+	line-height:35px;
+	font-size:14px;
+	font-weight:bold;
+	text-align:center;
+	background-color:#ababab; 
+	color:#ffffff;
+}
+
+.submenu>li>a:hover{ /*<a> 요소에 마우스를 올릴 때 스타일*/ 
+	background-color:#30a3f3;
+}
+
+=============================================================================
+
+[실행 결과 확인] Chrome 실행 확인 : 1_7.jpg
+
+* Chrome 실행 후 "천문대 소개" 텍스트 위에 마우스를 올려놓으면 a:hover 스타일이 적용됩니다.
+
+=============================================================================
