@@ -7,9 +7,10 @@
     <link href="css/initialization.css" type="text/css" rel="stylesheet">
     <link href="css/header.css" type="text/css" rel="stylesheet">
     <link href="css/body_picture.css" type="text/css" rel="stylesheet">
-    <link rel="stylesheet" href="css/detail.css">
+    <link href="css/detail.css" type="text/css" rel="stylesheet">
     <script src="javascript/jquery-1.12.3.js"></script>
     <script src="javascript/script.js" defer type="text/javascript"></script>
+
 
     <title>easystudio</title>
 </head>
@@ -54,8 +55,29 @@
                         <img src="images/room1.jpg" alt="" class="bigphoto">
                     </div>
                 </div>
-                <div class="reservation">
-                    
+                <div class="reservation">   <!--오른쪽 예약 네비게이션-->
+                    <div class="res_contents">
+                        <p style= "font-size: 12px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.33; letter-spacing: normal; color: rgb(69, 75, 80);">현재 단계에서는 요금이 부과되지 않습니다.</p>
+                        <p style="margin-top: 6px; font-size: 16px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.44; letter-spacing: -0.1px; color: rgb(27, 29, 31);">호스트에게 진행이 가능한지 확인해보세요.</p>
+                        <div class="res_row">
+                            <p style="font-size: 24px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.44; letter-spacing: -0.1px; color: rgb(27, 29, 31);">80,000원 / 시간</p>
+                        </div>
+                        <div style="margin-top: 16px; height: 1px; background-color: rgb(231, 234, 238);"></div>    <!--구분선-->
+                        <div class="res_center">
+                            <p style="font-size: 16px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.38; letter-spacing: -0.1px; color: rgb(27, 29, 31);">날짜</p>
+                            <input type="date" style="margin-top: 20px; margin-left: 20px; margin-bottom: 20px;"></input>
+                            <p style="font-size: 16px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.38; letter-spacing: -0.1px; color: rgb(27, 29, 31);">시간</p>
+                            <input type="time" style="margin-left: 20px; margin-top: 20px;"> ~ <input type="time">
+                            
+                            <div class="resbtn">
+                                <button class="w-btnn w-btnn-gra1" type="button">
+                                예약 요청하기
+                                </button>
+                            </div>
+                            
+                        </div>
+
+                    </div>
                 </div>
             </div>    
         </div>

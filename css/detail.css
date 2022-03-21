@@ -29,11 +29,52 @@
 }
 
 .reservation{
-    width: 30%;
-    height: 500px;
+    width: 400px;
+    height: 560px;
     margin-right: 0px;
     position: fixed;
     left: 70%;
     border: 1px solid rgb(169, 177, 177);
     border-radius: 10px;
+}
+
+.res_contents{
+    margin:30px;
+}
+
+.res_row{
+    margin-top: 8px; 
+    align-items: flex-end;
+}
+
+.res_center{
+    margin: 20px;
+}
+
+.resbtn{
+    margin: 80px 20px 20px 20px;
+}
+
+.w-btnn {
+    position: relative;
+    border: none;
+    display: inline-block;
+    padding: 15px 80px;
+    border-radius: 15px;
+    font-family: "paybooc-Light", sans-serif;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.25s;
+}
+.w-btnn:hover {
+    letter-spacing: 2px;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+.w-btnn:active {
+    transform: scale(1.1);
+}
+.w-btnn-gra1 {
+    background: linear-gradient(-45deg, #33ccff 0%, #ff99cc 100%);
+    color: white;
 }
