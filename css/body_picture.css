@@ -16,6 +16,15 @@
     margin-right: 100px;
     margin-bottom: 20px;
 }
+.title{
+
+    height: 30px;
+    padding: 0;
+}
+.title_box{
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 .studioimg{
     height: 400px;
     width: 1200px;
@@ -23,7 +32,8 @@
     margin-right: 100px;
 }
 .imgdetail{
-    display: flex; 
+    display: flex;
+    padding-top: 35px;
     width: 100%; 
     min-width: 100%; 
 }
@@ -34,6 +44,7 @@
     margin: 0px 40px 10px; 
     background-color: rgb(255, 255, 255);
     border-radius: 8px; 
+    border: 1px solid rgb(169, 177, 177);
     box-shadow: 3px 3px 10px 0 var(--opacity-black-06); 
     cursor: pointer;
 }
@@ -42,6 +53,7 @@
     width: 224px; 
     margin: 0px 40px 10px; 
     background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(169, 177, 177);
     border-radius: 8px; 
     box-shadow: 3px 3px 10px 0 var(--opacity-black-06); 
     cursor: pointer;
@@ -51,6 +63,7 @@
     width: 224px; 
     margin: 0px 40px 10px; 
     background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(169, 177, 177);
     border-radius: 8px; 
     box-shadow: 3px 3px 10px 0 var(--opacity-black-06); 
     cursor: pointer;
@@ -60,6 +73,7 @@
     width: 224px; 
     margin: 0px 40px 10px; 
     background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(169, 177, 177);
     border-radius: 8px; 
     box-shadow: 3px 3px 10px 0 var(--opacity-black-06); 
     cursor: pointer;
