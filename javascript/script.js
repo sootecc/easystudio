@@ -3,6 +3,12 @@
 //                    준비된 후 자바스크립트 문서 코드가 실행되도록 함
 // $ : jQuery() 함수의 별칭(또는 축약 표현) : 선택자와 일하는 DOM 태그의
 //     배열을 가진 특별한 객체를 반환함. 기본 형식 : $(선택자(select)).action
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	e575717f81a20e7f099338ffa1121c3f"></script>
+
+
+
+
 jQuery(document).ready(function(){
 
     // .navi의 li 태그에 mouseover 이벤트 설정
@@ -85,3 +91,5 @@ $('.btn_gotop').click(function(){
 	$('html, body').animate({scrollTop:0},400);
 	return false;
 });
+
+
