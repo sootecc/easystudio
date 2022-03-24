@@ -4,10 +4,19 @@
 // $ : jQuery() 함수의 별칭(또는 축약 표현) : 선택자와 일하는 DOM 태그의
 //     배열을 가진 특별한 객체를 반환함. 기본 형식 : $(선택자(select)).action
 
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	e575717f81a20e7f099338ffa1121c3f"></script>
 
-
-
+//최상단으로 가는 버튼
+$(window).scroll(function(){
+	if ($(this).scrollTop() > 300){
+		$('.btn_gotop').show();
+	} else{
+		$('.btn_gotop').hide();
+	}
+});
+$('.btn_gotop').click(function(){
+	$('html, body').animate({scrollTop:0},400);
+	return false;
+});
 
 jQuery(document).ready(function(){
 
@@ -79,17 +88,6 @@ $(function(){
 
 
 
-//최상단으로 가는 버튼
-$(window).scroll(function(){
-	if ($(this).scrollTop() > 300){
-		$('.btn_gotop').show();
-	} else{
-		$('.btn_gotop').hide();
-	}
-});
-$('.btn_gotop').click(function(){
-	$('html, body').animate({scrollTop:0},400);
-	return false;
-});
+
 
 

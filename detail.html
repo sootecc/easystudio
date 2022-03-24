@@ -10,6 +10,7 @@
     <link href="css/detail.css" type="text/css" rel="stylesheet">
     <script src="javascript/jquery-1.12.3.js"></script>
     <script src="javascript/script.js" defer type="text/javascript"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=APIKEY&libraries=services,clusterer,drawing"></script>
 
 
     <title>easystudio</title>
@@ -49,11 +50,48 @@
             <div class="detail_wrap">
                 <div class="detail">
                     <div class="name">
-                        장소 이름
+                        <p style="font-size: 24px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.44; letter-spacing: -0.1px; color: rgb(27, 29, 31);">장소이름1</p>
                     </div>
                     <div class="photo">
-                        <img src="images/room1.jpg" alt="" class="bigphoto">
+                        <img src="images/room1.jpg" alt=""  style = "height: 500px; width: 700px;">
                     </div>
+                    <div class="detail_center">
+                        <p></p>
+                        <div class="place_text">
+
+                        </div>
+
+                        <div id="map" style="width:500px;height:400px;"></div>
+                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e575717f81a20e7f099338ffa1121c3f"></script>
+                        <script>
+                            var container = document.getElementById('map');
+                            
+                            var options = {
+                                center: new kakao.maps.LatLng(37.47880, 126.8789),           //위도, 경도 설정하는 곳
+                                level: 3
+                            };
+                            var map = new kakao.maps.Map(container, options);
+                            var markerPosition  = new kakao.maps.LatLng(37.47880, 126.8789); 
+                            var marker = new kakao.maps.Marker({position: markerPosition});
+                            marker.setMap(map);
+                            var iwContent = '<div style="padding:5px;">KOSMO! <br><a href="https://map.kakao.com/link/map/한국소트프웨어인재개발원,37.47880,126.8789" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/KOSMO!,37.47880,126.8789" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                            iwPosition = new kakao.maps.LatLng(37.47880, 126.8789); //인포윈도우 표시 위치입니다
+
+                            // 인포윈도우를 생성합니다
+                            var infowindow = new kakao.maps.InfoWindow({
+                                position : iwPosition, 
+                                content : iwContent 
+                            });
+                            
+                            // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+                            infowindow.open(map, marker); 
+
+                        </script>
+                        
+                    </div>
+
+
+
                 </div>
                 <div class="reservation">   <!--오른쪽 예약 네비게이션-->
                     <div class="res_contents">
@@ -79,17 +117,7 @@
 
                     </div>
                 </div>
-                <div id="map" style="width:500px;height:400px;"></div>
-                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e575717f81a20e7f099338ffa1121c3f"></script>
-                <script>
-                    var container = document.getElementById('map');
-                    var options = {
-                        center: new kakao.maps.LatLng(33.450701, 126.570667),           //위도, 경도 설정하는 곳
-                        level: 3
-                    };
-
-                    var map = new kakao.maps.Map(container, options);
-                </script>
+                
             </div>    
         </div>
     </div>
