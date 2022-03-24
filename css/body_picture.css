@@ -112,3 +112,17 @@
     box-shadow: 3px 3px 10px 0 var(--opacity-black-06); 
     
 }
+.bodywrap2{
+
+    height: 500px;
+    width: 100%;
+
+}
+
+.contents2{
+    
+    padding-top: 100px;
+    height: 140px;
+    width: 100%;
+
+}
