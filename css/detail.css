@@ -1,60 +1,61 @@
-.detail_wrap{ /**/
-    height:2000px;
+
+.h_row_center{
+    position: relative;
+    margin-top: 20px;
+}
+
+.h_row{
     width: 100%;
-    
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.detail{
-    position: absolute;
-    height: 2000px;
-    width: 700px;
-    margin-left: 0px;
-}
-.name{
-    width: 200px;
-    height: 40px;
-    padding: 0px;
-    margin-left: 0px;
-    
+.photo_container{
+    margin-top: 50px; 
+    height: 480px; 
+    width: 100%; 
+    overflow: hidden; 
+    display: flex; 
+    border-radius: 6px;
+    margin: 0;
+    padding: 0;
 }
 
-.photo{
-    width: 700px;
-    height: 500px;
-    margin-left: 0px;
+.h_row_center{
+    margin-top: 30px; 
+    width: 100%;
+    height: 60px; 
+    position: relative;
 }
 
-.detail_center{
-    width: 700px;
-    height: 1500px;
-}
 
-.place_text{
-    width: 700px;
-    height: 1000px;
-}
 
 .reservation{
-    width: 400px;
-    height: 560px;
-    margin-right: 0px;
-    position: fixed;
-    left: 70%;
-    border: 1px solid rgb(169, 177, 177);
+    width: 400px; 
+    margin-left: 40px; 
+    position: relative;
+}
+
+.reservation_box{
+    margin-top: 16px; 
     border-radius: 10px;
+    border: 1px solid rgb(223, 226, 231); 
+    background-color: rgb(255, 255, 255);
 }
 
-.res_contents{
-    margin:30px;
-}
-
-.res_row{
+.place_name{
     margin-top: 8px; 
-    align-items: flex-end;
-}
-
-.res_center{
-    margin: 20px;
+    font-size: 32px; 
+    font-weight: bold;
+    font-stretch: normal; 
+    font-style: normal; 
+    line-height: 1.31; 
+    letter-spacing: -0.3px; 
+    color: rgb(27, 29, 31);
 }
 
 .resbtn{
