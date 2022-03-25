@@ -86,7 +86,12 @@ $(function(){
     }
 });
 
-
+//detail 사이드바 슬라이드
+var currentPosition = parseInt($(".reservation").css("top")); 
+$(window).scroll(function() {
+    var position = $(window).scrollTop();
+    $(".reservation").stop().animate({"top":position+currentPosition+"px"},700); 
+});
 
 
 
