@@ -7,6 +7,10 @@
     <link href="css/initialization.css" type="text/css" rel="stylesheet">
     <link href="css/header.css" type="text/css" rel="stylesheet">
     <link href="css/body_picture.css" type="text/css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    
     <script src="javascript/jquery-1.12.3.js"></script>
     <script src="javascript/script.js" defer type="text/javascript"></script>
 
@@ -52,56 +56,103 @@
                     
                 </div>
                 <div class="studioimg"> <!--사진과 장소 설명을 묶어준다.-->
-                    <li>
-                        <li>
-                            <div class="imgdetail">
-                                <div class = "img1">
-                                    <a href="detail.html">
-                                        <img src="images/room1.jpg" alt="방 사진1" class="place">
-                                        <div class="img_explain">
-                                            방 사진 1에 대한 설명
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class = "img2">
-                                    <a href="detail.html">
-                                        <img src="images/room2.jpg" alt="방 사진2" class="place">
-                                        <div class="img_explain">
-                                            방 사진 2에 대한 설명
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class = "img3">
-                                    <a href="detail.html">
-                                        <img src="images/room3.jpg" alt="방 사진3" class="place">
-                                        <div class="img_explain">
-                                            방 사진 3에 대한 설명
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class = "img4">
-                                    <a href="detail.html">
-                                        <img src="images/room4.jpg" alt="방 사진4" class="place">
-                                        <div class="img_explain">
-                                            방 사진 4에 대한 설명
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class = "img5">
-                                    <a href="detail.html">
-                                        <img src="images/room5.jpg" alt="방 사진5" class="place">
-                                        <div class="img_explain">
-                                            방 사진 5에 대한 설명
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-                            
-                        </li>
-
-                        
-                    </li>
                     
+                        
+                            <div class="imgdetail">
+                                <div class="swiper-container myswiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <img src="images/room1.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;">
+                                            <div class="img_dt">
+                                                <div style="position: relative; padding: 30px;">
+                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
+                                                    교육기관, 서울
+                                                    </p>
+                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
+                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
+                                                    </p>
+                                                    <div style="margin-top: 10px;">
+                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
+                                                            64,000원
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/room2.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;">
+                                            <div class="img_dt">
+                                                <div style="position: relative; padding: 30px;">
+                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
+                                                    교육기관, 서울
+                                                    </p>
+                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
+                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
+                                                    </p>
+                                                    <div style="margin-top: 10px;">
+                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
+                                                            80,000원
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/room3.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;">
+                                            <div class="img_dt">
+                                                <div style="position: relative; padding: 30px;">
+                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
+                                                    교육기관, 서울
+                                                    </p>
+                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
+                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
+                                                    </p>
+                                                    <div style="margin-top: 10px;">
+                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
+                                                            100,000원
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/room4.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;">
+                                            <div class="img_dt">
+                                                <div style="position: relative; padding: 30px;">
+                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
+                                                    교육기관, 서울
+                                                    </p>
+                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
+                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
+                                                    </p>
+                                                    <div style="margin-top: 10px;">
+                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
+                                                            44,000원
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <img src="images/room5.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;">
+                                            <div class="img_dt">
+                                                <div style="position: relative; padding: 30px;">
+                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
+                                                    교육기관, 서울
+                                                    </p>
+                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
+                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
+                                                    </p>
+                                                    <div style="margin-top: 10px;">
+                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
+                                                            50,000원
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                </div> 
+                            </div>
                 </div>
             </div>
             <div class="bodywrap2">

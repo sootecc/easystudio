@@ -86,7 +86,7 @@ $(function(){
     }
 });
 
-//detail 사이드바 슬라이드
+//detail 사이드바 상하 슬라이드
 var currentPosition = parseInt($(".reservation").css("top")); 
 $(window).scroll(function() {
     var position = $(window).scrollTop();
@@ -96,3 +96,12 @@ $(window).scroll(function() {
 
 
 
+//메인 그림 터치 슬라이드
+// ※ 클래스명 myswiper 사용
+new Swiper('.myswiper', {
+
+	// 슬라이드 속도 설정
+	// 지정하지 않을시 기본값은 300
+	speed : 1000,
+
+});
