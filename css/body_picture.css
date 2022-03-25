@@ -1,5 +1,6 @@
 .masterbody{
-    height: 5000px;
+    
+    position: relative;
     width: 100%;
 }
 .btn_gotop {
@@ -16,10 +17,13 @@
 	border-radius:100%;
 }
 .bodywrap{ /**/
-    height:500px;
+    position: relative;
     width: 100%;
-    background-color: rgb(250, 251, 251);
-    border-bottom: 1px solid rgb(230, 230, 250);
+}
+.contents1{
+    position: relative;
+    width: 100%;
+    background-color: rgb(250, 250, 251);
 }
 .contents_title{
     
@@ -37,6 +41,11 @@
 .title_box{
     padding-top: 20px;
     padding-bottom: 20px;
+    font-style: bold; 
+    font-weight: 500; 
+    font-size: 22px; 
+    line-height: 30px; 
+    color: rgb(27, 29, 31);
 }
 .studioimg{
     height: 400px;
@@ -76,9 +85,11 @@
 
 
 
-.bodywrap2{
 
-    height: 500px;
+
+.bodywrap2{
+    position: relative;
+    height: 601px;
     width: 100%;
 
 }

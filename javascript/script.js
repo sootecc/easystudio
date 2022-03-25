@@ -105,3 +105,5 @@ new Swiper('.myswiper', {
 	speed : 1000,
 
 });
+
+
