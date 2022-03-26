@@ -106,4 +106,16 @@ new Swiper('.myswiper', {
 
 });
 
+//클릭 시 해당 엘리먼트로 스크롤 이동
+(document).ready(function($) {
+
+    $(".h_place_select_button").click(function(event){         
+
+            event.preventDefault();
+
+            $('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+
+    });
+
+});
 

@@ -77,7 +77,40 @@
 
 
 
-#sub{
+#sub1{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-size: 24px; 
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33; 
+    letter-spacing: -0.3px; 
+    color: rgb(27, 29, 31);
+}
+#sub2{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-size: 24px; 
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33; 
+    letter-spacing: -0.3px; 
+    color: rgb(27, 29, 31);
+}
+#sub3{
+    padding-top: 20px;
+    padding-bottom: 50px;
+    font-size: 24px; 
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33; 
+    letter-spacing: -0.3px; 
+    color: rgb(27, 29, 31);
+}
+#sub4{
     padding-top: 20px;
     padding-bottom: 50px;
     font-size: 24px; 
