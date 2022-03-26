@@ -1,8 +1,0 @@
-멋진 팝업창 만들기
-https://bythem.net/2021/04/02/css-%EB%A9%8B%EC%A7%84-%ED%8C%9D%EC%97%85%EC%B0%BD%EC%9D%84-%EB%A7%8C%EB%93%A4%EA%B8%B0/
-
-슬라이드 배너 / 추가적인 글에 scrollby기능도 있음
-https://jforj.tistory.com/173
-
-드롭박스
-https://cpdev.tistory.com/88
