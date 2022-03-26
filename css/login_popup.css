@@ -67,6 +67,13 @@ button {
     min-height:100px;         /*최소 높이*/
     max-height:200px;         /*최대 높이*/
 }
+.body-contentbox2{           
+    word-break:break-word;   
+    overflow-y:auto;          
+    min-height:100px;         
+    max-height:200px;
+    
+}
 .w-btn {
     position: relative;
     border: none;
