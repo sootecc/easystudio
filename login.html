@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -54,25 +55,20 @@
                         <br>
                         <div class="body-contentbox">
                             
-                            <form action="/assets/etc/input_test.php" method="post">
-                                이메일 <input type="text" title="입력" name="input">
+                            <form action="javascript/postdata.jsp" method="post">
+                                    이메일 <input type="text"  name="email">
+                                <br><br>
+                                
+                                    비밀번호 <input type="text"  name="password">
+                                
+                                
+                                <div class="body-contentbox-login">
+                                <br>
+                                    <input type="submit" class="w-btn w-btn-gra1" value="로그인">
+                                </div>
                             </form>
-                            <br>
                             
-                            <form action="/assets/etc/input_test.php" method="post">
-                                비밀번호 <input type="text" title="입력" name="input">
-                            </form>
                             
-                            <div class="body-contentbox-login">
-                                <button class="w-btn w-btn-gra1" type="button">
-                                    로그인
-                                </button>
-                            </div>
-
-                            
-                            <div class="login_find_id"></div>
-                            <div class="login_find_pw"></div>
-                            <div class="register"></div>
                         </div>
                         <div class="body-contentbox2" >
                             <div style="border: 10px; padding-top: 70px; display: flex; align-items: center;justify-content: space-around;">
