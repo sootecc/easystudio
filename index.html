@@ -4,228 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/initialization.css" type="text/css" rel="stylesheet">
-    <link href="css/header.css" type="text/css" rel="stylesheet">
-    <link href="css/body_picture.css" type="text/css" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="javascript/jquery-1.12.3.js"></script>
-    <script src="javascript/script.js" defer type="text/javascript"></script>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@700&display=swap" rel="stylesheet">
+
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">   
+$(document).ready( function() {
+
+$("#header").load("./header.html"); 
+$("#footer").load("./footer.html");  
+
+});
+</script>
+
     <title>easystudio</title>
 </head>
-
-
 <body>
-    <div class="master">    
-        <header>
-            <div class="top">
-                <div class="logo">
-                    <a href="index.html" style="height: 100px; "><img src="images/easystudio35 logo.png" alt="easystudio로고" class="img_logo"></a>
-                </div>
-                <nav class="menu">
-                    <ul class="navi">
-                        <li><a href="index.html">모든 카테고리</a>
-                            <ul class="submenu">
-                                <li><a class="submenu_detail" href="index.html">가정집</a></li>
-                                <li><a class="submenu_detail" href="index.html">스튜디오</a></li>
-                                <li><a class="submenu_detail" href="index.html">상업공간</a></li>
-                                <li><a class="submenu_detail" href="index.html">편의시설</a></li>
-                                <li><a class="submenu_detail" href="index.html">특수공간</a></li>
-                                <li><a class="submenu_detail" href="index.html">대형공간</a></li>
-                            
-                            </ul>
-                        </li>
-                        <li><a href="index.html">인기 순위</a></li>
-                        <li>|</li>
-                        <li><a href="index.html">장소 등록</a></li>
-                        <li><a href="login.html">로그인</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <!-- 1번 사진 -->
-        <div class="masterbody">
-            <div class="bodywrap">  <!-- 컨텐츠 제목, 사진,장소설명을 묶어준다.-->
-                <div class="contents1">
-                    <div class="contents_title">
-                        <div class="title">
-                            <p class = "title_box">나를 위한 추천 장소</p>
-                        </div>
-                    </div>
-                    <div class="studioimg"> <!--사진과 장소 설명을 묶어준다.-->
-                            <div class="imgdetail">
-                                <div class="swiper-container myswiper">
-                                    <div class="swiper-wrapper">
-                                        <div class="swiper-slide">
-                                            <a href="detail1.html"><img src="images/room1.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;"></a>
-                                            <div class="img_dt">
-                                                <div style="position: relative; padding: 30px;">
-                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
-                                                    교육기관, 서울
-                                                    </p>
-                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
-                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
-                                                    </p>
-                                                    <div style="margin-top: 10px;">
-                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
-                                                            64,000원
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="detail2.html"><img src="images/room2.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;"></a>
-                                            <div class="img_dt">
-                                                <div style="position: relative; padding: 30px;">
-                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
-                                                    교육기관, 서울
-                                                    </p>
-                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
-                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
-                                                    </p>
-                                                    <div style="margin-top: 10px;">
-                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
-                                                            80,000원
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="detail3.html"><img src="images/room3.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;"></a>
-                                            <div class="img_dt">
-                                                <div style="position: relative; padding: 30px;">
-                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
-                                                    교육기관, 서울
-                                                    </p>
-                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
-                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
-                                                    </p>
-                                                    <div style="margin-top: 10px;">
-                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
-                                                            100,000원
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="detail4.html"><img src="images/room4.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;"></a>
-                                            <div class="img_dt">
-                                                <div style="position: relative; padding: 30px;">
-                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
-                                                    교육기관, 서울
-                                                    </p>
-                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
-                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
-                                                    </p>
-                                                    <div style="margin-top: 10px;">
-                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
-                                                            44,000원
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="swiper-slide">
-                                            <a href="detail5.html"><img src="images/room5.jpg" alt="" style="height: 300px; width: 600px; border-radius: 8px;"></a>
-                                            <div class="img_dt">
-                                                <div style="position: relative; padding: 30px;">
-                                                    <p style="margin-top: 2px; font-style: normal; font-weight: bold; font-size: 20px; line-height: 14px; color: rgb(38, 40, 43); text-align: left;">
-                                                    교육기관, 서울
-                                                    </p>
-                                                    <p style="margin-top: 24px; font-style: normal; font-weight: 500; font-size: 22px; line-height: 30px; color: rgb(27, 29, 31); text-align: left;">
-                                                        [금천구/가산디지털단지] <br> 한국소프트웨어인재개발원 KOSMO 
-                                                    </p>
-                                                    <div style="margin-top: 10px;">
-                                                        <p style="padding-top: 70px; margin-right: 8px; font-size: 30px; font-weight: 500; font-stretch: normal; font-style: normal; line-height: 2.0; letter-spacing: -0.1px; color: rgb(27, 29, 31); text-align: left;">
-                                                            50,000원
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                
-                <div class="contents2">
-                    <p class = "title_box" style="padding-left: 80px;">한 눈에 보는 스튜디오</p>
-                    <div class="contents2_outerbox">
-                        <article><a href="detail1.html" id="cover"><div id = "contents2_inner_title">가정집</div></a><img src="images/contents2/house.jpg" alt="" style="width: 274px; height: 140px; border-radius:  10px;"></article>
-                        <article><a href="detail2.html" id="cover"><div id = "contents2_inner_title">상업 공간</div></a><img src="images/contents2/cafe-3537801_1920.jpg" alt="" style="width: 274px; height: 140px; border-radius:  10px;"></article>
-                        <article><a href="detail3.html" id="cover"><div id = "contents2_inner_title">문화 공간</div></a><img src="images/contents2/culture.jpg" alt=""style="width: 274px; height: 140px;border-radius:  10px;"></article>
-                        <article><a href="detail4.html" id="cover"><div id = "contents2_inner_title">특수 공간</div></a><img src="images/contents2/office.jpg" alt=""style="width: 274px; height: 140px;border-radius:  10px;"></article>
-                        <article><a href="detail5.html" id="cover"><div id = "contents2_inner_title">야외</div></a><img src="images/contents2/outdoor.jpg" alt=""style="width: 274px; height: 140px;border-radius:  10px;"></article>
-                        <article><a href="detail1.html" id="cover"><div id = "contents2_inner_title">스튜디오</div></a><img src="images/contents2/studio.jpg" alt=""style="width: 274px; height: 140px;border-radius:  10px;"></article>
-                        <article><a href="detail3.html" id="cover"><div id = "contents2_inner_title">대형 공간</div></a><img src="images/contents2/big_factory.jpg" alt=""style="width: 274px; height: 140px;border-radius:  10px;"></article>
-                        <article><a href="detail5.html" id="cover"><div id = "contents2_inner_title">기타 공간</div></a><img src="images/contents2/modern_studio.jpg" alt=""style="width: 274px; height: 140px;border-radius:  10px;"></article>
-                    </div>
-                    
-                </div>
+    <div id = "header"></div>
 
-                <div class="contents3">
-                    <p class = "title_box" style="padding-left: 80px;">공지사항</p>
-                    <div class="contents3_outerbox">
-                        <div id="visual">     
-                            <div class="on"><a href="#"><img src="images/contents3/slide1.jpg" alt="1" width="100%" height="100%"></a></div>
-                            <div><a href="#"><img src="images/contents3/slide2.jpg" alt="2" width="100%" height="100%"></a></div>
-                            <div><a href="#"><img src="images/contents3/slide3.jpg" alt="3" width="100%" height="100%"></a></div>
-                        <div><a href="#"><img src="images/contents3/slide4.jpg" alt="4" width="100%" height="100%"></a></div>   
-                        <section>   
-                            <div id="left">
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div id="right">
-                                <span></span>
-                                <span></span>
-                            </div>
-                        </section>
-                        <section id="control">
-                            <a class="on" href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
-                            <a href="#"></a>
-                        </section>
-                    </div>
-                    </div>
-                </div>
-            
-        </div>
-    </div>
-
-
-
-
-
-    <div style="background-color: aliceblue; ">
-        <a href="#" class="btn_gotop" id="click">
-            <img src="images/up-arrow.png" style="width:50px"> 
-        </a>
-        
-        <div class="site">
-            <div class="copy" style="font-size: 14px;">
-                서울특별시 강남구 압구정로2길 62
-                <br>
-                010-5705-2718
-                <br>
-                sootecc@gmail.com
-            </div>
-        </div>
-    </div>
 
 
     
+
+
+    <div id="footer"></div>
 </body>
 </html>

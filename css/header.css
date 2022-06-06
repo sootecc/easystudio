@@ -1,93 +1,59 @@
-header{
-    height: 100px;
-    width: 100%;
-    border-bottom: 1px solid rgb(230, 230, 250);
-    top: 0px; 
-    transform: translateZ(0px);
-    position: relative;     /*서브메뉴가 사진 위에 올라가기 위해 필요하다.*/
 
-    z-index: 9999;
-    
-}
-
-.top{   /* logo와 menu 묶어줌*/
-    height: 100px;
-    width: 100%;
-}
-
-.logo{
-    
-    float: left;
-    height: 100px;
-    width: 250px;
-    padding-top: 10pxs;
-    padding-bottom: 10pxs;
-
-}
-.img_logo{
-    height: 90%;
-    width: 90%;
-
-}
-.menu{
-    position: absolute;
-    left: 800px;
-    float: right;
-    height: 100px;
-    width: 900px;
-    z-index: 1;
-    
-    
-}
-
-.navi{          
-    position: absolute;
-	float:right;
-	margin-top:30px;
-	margin-right:10px;
-}
-.navi>li{        
-	float:left;
-    
-}
-.navi>li>a{       
-    height:40px;
-	width:160px;
-	line-height:40px; 
-	font-size:16px;
-	font-weight:bold;
-	text-align:center;
-}
-.navi>li>a:hover{
-    position: relative;
-    color: white;
-	background-color:rgba(38, 29, 158, 0.89); 
-    cursor: pointer;
-}
-
-
-.submenu{         
-	position: absolute;
-    height: 210px;
-    width: 160px;
-    left: 0px;
-    cursor: default;
+    /* 메인 모든 카테고리 */
+.category_all {
     display: none;
 }
 
-
-.submenu>li>a{    
-	height:35px;
-	line-height:35px;
-	font-size:14px;
-	font-weight:bold;
-	text-align:center;
-	background-color:#30a3f3; 
-	color:#ffffff;
+.category_all:hover {
+    display: block;
 }
 
-.submenu>li>a:hover{ 
-	background-color:#30a3f3;
-    cursor: pointer;
-    
+.category_all:hover .category_all_button .h_header_button {
+    background-color: #f5f7f8;
+    border-radius: 4px;
+}
+
+.category_all:hover .h_header_button {
+    background-color: #f5f7f8;
+    border-radius: 4px;
+}
+
+.category_all_button:hover .h_header_button {
+    background-color: #f5f7f8;
+    border-radius: 4px;
+}
+
+.category_all_button:hover .category_all {
+    display: block;
+}
+
+.h_center{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.h_row_center{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.h_column_center{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h_hover_button:hover{
+    background-color: rgb(245, 247, 248);
+}
+
+.h_header_button:hover{
+    background-color: rgb(245, 247, 248);
+    border-radius: 4px;
 }

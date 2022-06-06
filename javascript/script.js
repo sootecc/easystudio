@@ -18,146 +18,6 @@ $('.btn_gotop').click(function(){
 	return false;
 });
 
-jQuery(document).ready(function(){
-
-    // .navi의 li 태그에 mouseover 이벤트 설정
-    $('.navi>li').mouseover(function(){
-       // $(this) : 현재 선택된 태그(요소)
-       // find('.submenu') : 선택된 태그의 자식 태그 중 .submenu와 일치하는 태그를
-       //        찾아서 반환함. 만약에, children()를 사용할 경우 직계 자식 태그를 반환함
-       // stop() : 현재 동작하고 있는 애니메이션 동작을 즉시 중단함
-       // slideDown(), slideUp() : jQuery 라이브러리에서 제공하는 함수로
-       // 슬라이딩 애니메이션과 함께 보여주거나 숨김 구현함. 선택한 요소의 height 값을
-       // 낮추거나 높혀가며 슬라이드 업 또는 다운 전환되게 함.
-       // 매개변수값(인수) 500은 0.5초를 의미함
-        $(this).find('.submenu').stop().slideDown(500);
-        
-    // .navi의 li 태그에 mouseout 이벤트 설정
-    }).mouseout(function(){
-        $(this).find('.submenu').stop().slideUp(500);
-    });
-    
-    
-    
-
-    // .imgslide a:gt(0) : gt(index)은 index 값보다 더 큰 값(Greater)을
-    //  가진 요소를 선택함. 0번째부터 계수하여 index 값보다 큰 값을 가져옴.
-    // 여기에서는 gt(0)이므로 1, 2, 3이 됨
-    $('.imgslide a:gt(0)').hide();
-        // setInterval(function(){}), 3000 : 일정시간마다 반복적으로
-        // 동작을 실행하게 함. 3000은 3000ms(3초)는 3초마다 반복 실행함.
-        setInterval(function(){
-        // 가상클래스 선택자로 부모 요소가 가지고 있는 자식 요소 중 첫번째를
-        // 선택함. imgslide의 자식요소 <a>요소에서 첫 번째를 선택하여
-        // 페이드아웃 실행함
-        $('.imgslide a:first-child').fadeOut()
-         // 다음 요소를 선택하여 페이드인 실행함
-        .next('a').fadeIn()
-         // 끝에다 appendTo()함수 내용을 붙여줌
-         // 즉, 선택한 요소를 .imgslide 선택자 요소의 자식 요소로 추가해줌
-        .end().appendTo('.imgslide');}, 3000);
-
-         // (".notice li:first").click : .notice 요소의 후손 요소
-         // 중에서 첫 번째 요소를 클릭하면
-        $(".notice li:first").click(function(){
-            // #modal과 일치하는 요소에 'active'클래스를 추가함 
-            $("#modal").addClass("active");
-        });
-
-         // .btn 요소를 클릭하면
-        $(".btn").click(function(){
-             // #modal의 'active'클래스를 삭제함
-            $("#modal").removeClass("active");
-        });
-
-});
-
-$(function(){
-    $("#modal-open").click(function(){        
-        $("#popup").css('display','flex').hide().fadeIn();
-        //팝업을 flex속성으로 바꿔준 후 hide()로 숨기고 다시 fadeIn()으로 효과
-    });
-    $("#close").click(function(){
-        modalClose(); //모달 닫기 함수 호출
-        history.back();     //로그인 화면 닫으면 이전 페이지로 
-    });
-    function modalClose(){
-        $("#popup").fadeOut(); //페이드아웃 효과
-    }
-});
-
-//detail 사이드바 상하 슬라이드
-var currentPosition = parseInt($(".reservation").css("top")); 
-$(window).scroll(function() {
-    var position = $(window).scrollTop();
-    $(".reservation").stop().animate({"top":position+currentPosition+"px"},700); 
-});
-
-
-
-
-//메인 그림 터치 슬라이드
-// ※ 클래스명 myswiper 사용
-new Swiper('.myswiper', {
-
-	// 슬라이드 속도 설정
-	// 지정하지 않을시 기본값은 300
-	speed : 1000,
-
-});
-
-//자동 슬라이드
-var idx_lgth = $("#visual>div").length;
-var srt = 1;
-var idx = 0;
-
-$("section>a").click(function(){
-idx = $(this).index();
-srt = idx;
-$(this).addClass('on').siblings().removeClass('on');
-$("#visual>div").eq(idx).addClass('on').siblings().removeClass('on');
-});
-
-var AutoSlide = setInterval(AutoRun, 3000);
-
-function AutoRun(){
-srt++;  
-
-if(srt == idx_lgth){
-    srt = 0;  
-}
-$("section>a").eq(srt).addClass('on').siblings().removeClass('on');
-$("#visual>div").eq(srt).addClass('on').siblings().removeClass('on');
-}
-
-$("#visual").mouseover(function(){
-clearInterval(AutoSlide);
-$("#right").css({opacity : '1'});
-$("#left").css({opacity : '1'});
-});
-$("#visual").mouseleave(function(){
-AutoSlide = setInterval(AutoRun, 3000);     
-$("#right").css({opacity : '0'});
-$("#left").css({opacity : '0'});
-});
-
-$("#right").click(function(){
-srt++;
-if(srt == idx_lgth){
-    srt = 0;   
-} 
-$("#visual>div").eq(srt).addClass('on').siblings().removeClass('on'); $("section>a").eq(srt).addClass('on').siblings().removeClass('on');
-});
-
-$("#left").click(function(){
-srt--;
-if(srt == -1){
-    srt = idx_lgth-1; 
-}
-$("#visual>div").eq(srt).addClass('on').siblings().removeClass('on');
-$("section>a").eq(srt).addClass('on').siblings().removeClass('on'); 
-});
-
 
 
 
@@ -174,3 +34,117 @@ $("section>a").eq(srt).addClass('on').siblings().removeClass('on');
 
 });
 
+
+//index_imageslide
+class DraggableSlider {
+    constructor() {
+        this.container = document.querySelector(".js-experience-slider");
+        this.proxy = this.container.querySelector(".proxy");
+        this.slider = document.querySelector(".js-experience-slider__inner");
+        this.sliderContent = document.querySelector(
+            ".js-experience-slider__content"
+        );
+        this.slides = [...this.container.querySelectorAll(".js-experience-slide")];
+        this.slidesNumb = this.slides.length;
+        this.sliderWidth = 0;
+
+        this.draggable = null;
+
+        this.current = 0;
+        this.last = 0;
+
+        this.init();
+    }
+
+    setBounds() {
+        this.sliderWidth = this.slides[0].offsetWidth * this.slidesNumb + 1;
+
+        TweenMax.set([this.slider, this.proxy], {
+            width: this.sliderWidth,
+            x: "+=0",
+            skewType: "simple"
+        });
+    }
+
+    createDraggable() {
+        var slider = this.slider,
+            tracker = ThrowPropsPlugin.track(slider, "x"),
+            pressedTop; //when the users presses down, if the mouse is in the top half of the image, pressedTop will be true. We use this to make the skewing more natural, like the mouse is "pulling" that part of the image
+        this.draggable = Draggable.create(this.proxy, {
+            type: "x",
+            edgeResistance: 0.75,
+            onPress: function (e) {
+                var bounds = this.target.getBoundingClientRect();
+                pressedTop = e.clientY < bounds.y + bounds.height / 2;
+                //keep track of how far apart the proxy is from the slider because when the user presses down, we want to IMMEDIATELY stop any motion, thus this offset value becomes baked in until release.
+                this.offset = this.x - slider._gsTransform.x;
+                TweenLite.killTweensOf(slider); //in case it's moving
+                TweenLite.to(slider, 0.2, {
+                    skewX: 0
+                });
+            },
+            onDrag: function () {
+                TweenLite.to(slider, 0.8, {
+                    x: this.x - this.offset,
+                    ease: Power2.easeOut
+                });
+            },
+            onRelease: function () {
+                //if the user just presses down and releases without really moving much at all, there's no need to do a throwProps tween.
+                if (this.tween && Math.abs(tracker.getVelocity("x")) > 20) {
+                    TweenLite.to(slider, this.tween.duration(), {
+                        throwProps: {
+                            x: {
+                                end: this.endX
+                            }
+                        },
+                        ease: Power3.easeOut
+                    });
+                }
+                TweenLite.to(slider, 0.5, {
+                    skewX: 0,
+                    ease: Power1.easeOut
+                });
+            },
+            //dragResistance: 0.5,
+            bounds: this.container,
+            throwProps: true
+        })[0];
+    }
+
+    scrollwheel() {
+        var slider = this.slider;
+        var container = this.container;
+
+        this.container.addEventListener("wheel", function (e) {
+            e.preventDefault();
+
+            TweenLite.to(slider, 0.5, {
+                x: "+=" + -e.deltaY * 2,
+                ease: Power3.easeOut,
+                modifiers: {
+                    x: function (x) {
+                        if (x > 0) {
+                            x = 0;
+                        } else if (x < -(slider.clientWidth - container.clientWidth)) {
+                            x = -(slider.clientWidth - container.clientWidth);
+                        }
+                        return x;
+                    }
+                }
+            });
+        });
+    }
+
+    destroy() {
+        this.draggable.kill();
+    }
+
+    init() {
+        this.setBounds();
+        this.createDraggable();
+        this.scrollwheel();
+    }
+}
+
+const slider = new DraggableSlider();
