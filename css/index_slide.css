@@ -1,13 +1,58 @@
-.swiper-container {
-	width:600px;
-	height:400px;
+.viewport {
+    width: 1274px;
+    overflow: hidden;
+    margin: 0 auto;
 }
-.swiper-slide {
-	text-align:center;
-	display:flex; /* 내용을 중앙정렬 하기위해 flex 사용 */
-	align-items:center; /* 위아래 기준 중앙정렬 */
-	justify-content:center; /* 좌우 기준 중앙정렬 */
+
+.flipsnap {
+    width: 1370px; /* 274px(item width) * 5(item count) */
 }
-.swiper-slide img {
-	box-shadow:0 0 5px #555;
+
+.flipsnap:after {
+    content: '';
+    display: block;
+    clear: both;
+    height: 0;
 }
+
+.item {
+    float: left;
+    width: 270px;
+    font-size: 50px;
+    text-align: center;
+    padding: 50px 10px 50px 10px;
+}
+
+
+
+.showbox{
+	position: relative;
+	min-width: 234px;
+	margin: 0px 10px 10px;
+	background-color: rgb(255, 255, 255);
+	border-radius: 8px;
+	box-shadow: 3px 3px 10px 0 var(--opacity-black-06);
+	cursor: pointer;
+}
+
+/*inside part of item*/
+.slide-up{
+	position: relative;
+	width: 100%;
+	height: 150px;
+	border-top-right-radius: 8px;
+	border-top-left-radius: 8px;
+	overflow: hidden;
+}
+
+.slide-up>img{
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.slide-down{
+	position: relative;
+	padding: 10px 14px 22px;
+}
+/*----------------------------------*/
