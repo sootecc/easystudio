@@ -58,3 +58,14 @@
     margin-bottom:0;
 }
 
+.btn_gotop {
+	display:none;
+	position:fixed;
+	bottom:20px;
+	right:50%;
+	z-index:  9999;
+	outline:none;
+	color:#333;
+	cursor:pointer;
+	border-radius:100%;
+}

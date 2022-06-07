@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="css/login.css" type="text/css" rel="stylesheet">
-    <link rel="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script src="javascript/login.js"></script>
 <script type="text/javascript">
 
 $(document).ready( function() {
@@ -30,8 +28,8 @@ $("#footer").load("./footer.html");
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
-            <h2 class="active"> Sign In </h2>
-            <a href = "regeister.html"><h2 class="inactive underlineHover">Sign Up </h2></a>
+            <a href = "login.html"><h2 class="inactive underlineHover">Sign In </h2></a>
+            <h2 class="active"> Sign Up </h2>
     
             <!-- Icon -->
             <div class="fadeIn first">
@@ -40,9 +38,11 @@ $("#footer").load("./footer.html");
     
             <!-- Login Form -->
             <form>
+                
                     <input type="text" id="login" class="fadeIn second" name="login" placeholder="Enter email">
-                    <input type="password" id="password" class="fadeIn third" name="login" placeholder="Enter password">
-                    <input type="submit" class="fadeIn fourth" value="Log In">
+                    <input type="text" id="password" class="fadeIn third" name="login" placeholder="Enter password">
+                    <input type="submit" class="fadeIn fourth" value="SIgn Up">
+                
             </form>
     
             <!-- Remind Passowrd -->

@@ -1,5 +1,9 @@
 
     /* 메인 모든 카테고리 */
+a{
+    text-decoration: none;
+}
+
 .category_all {
     display: none;
 }
