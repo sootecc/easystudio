@@ -1,0 +1,12 @@
+.h_column_center {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h_row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}

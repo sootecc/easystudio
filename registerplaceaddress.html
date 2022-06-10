@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="css/login.css" type="text/css" rel="stylesheet">
+
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready( function() {
+
+$("#header").load("./header.html"); 
+$("#footer").load("./footer.html");  
+
+});
+</script>
+</head>
+
+
+<body>
+    
+    <div id="header"></div>
+    <br>
+    <p style="text-align: center; font-size: 24px;">등록할 장소는 어디에 있나요?</p>
+    <br><br>
+
+    <div style="width: 100%; height: 1000px; text-align: center;">
+        <form action="장소등록" method="post"><!--데이터 임시 저장하고 컨트롤러에서? 다음 페이지로 넘겨주기-->
+        <input type="text" id="sample5_address" placeholder="주소">
+        <input type="text" id="sample5_detailAddress" placeholder="상세주소">
+        <input type="button" onclick="sample5_execDaumPostcode()" value="주소 검색하기">
+        <button type ="submit" style="">등록하기</button>
+        </form>
+        
+        <div id="map" style="width:100%;height:400px;margin-top:10px;display:none"></div>
+    </div>
+
+
+
+
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+    <script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e575717f81a20e7f099338ffa1121c3f&libraries=services"></script>
+    <script>
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div
+            mapOption = {
+                center: new daum.maps.LatLng(37.537187, 127.005476), // 지도의 중심좌표
+                level: 5 // 지도의 확대 레벨
+            };
+    
+        //지도를 미리 생성
+        var map = new daum.maps.Map(mapContainer, mapOption);
+        //주소-좌표 변환 객체를 생성
+        var geocoder = new daum.maps.services.Geocoder();
+        //마커를 미리 생성
+        var marker = new daum.maps.Marker({
+            position: new daum.maps.LatLng(37.537187, 127.005476),
+            map: map
+        });
+    
+    
+        function sample5_execDaumPostcode() {
+            new daum.Postcode({
+                oncomplete: function(data) {
+                    var addr = data.address; // 최종 주소 변수
+
+                    // 주소 정보를 해당 필드에 넣는다.
+                    document.getElementById("sample5_address").value = addr;
+                    // 주소로 상세 정보를 검색
+                    geocoder.addressSearch(data.address, function(results, status) {
+                        // 정상적으로 검색이 완료됐으면
+                        if (status === daum.maps.services.Status.OK) {
+    
+                            var result = results[0]; //첫번째 결과의 값을 활용
+    
+                            // 해당 주소에 대한 좌표를 받아서
+                            var coords = new daum.maps.LatLng(result.y, result.x);
+                            // 지도를 보여준다.
+                            mapContainer.style.display = "block";
+                            map.relayout();
+                            // 지도 중심을 변경한다.
+                            map.setCenter(coords);
+                            // 마커를 결과값으로 받은 위치로 옮긴다.
+                            marker.setPosition(coords)
+                        }
+                    });
+
+
+                }
+            }).open();
+        }
+    </script>
+
+
+
+    <div id="footer"></div>
+</body>
+</html>

@@ -7,34 +7,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/review.css" type="text/css" rel="stylesheet">
     <script src="javascript/review.js" defer type="text/javascript"></script>
+    <script src="javascript/infiniteScroll.min.js"></script>
 
 
+    <script type="text/javascript">
 
-    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
-<!-- masonry 로딩 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.0.0/masonry.pkgd.min.js"></script>
-<!-- imagesloaded 로딩 (모든 이미지가 로딩된 후 실행되도록 할때 필요) -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.0/imagesloaded.pkgd.min.js"></script>
-
-
+        $(document).ready( function() {
+        
+        $("#header").load("./header.html"); 
+        $("#footer").load("./footer.html");  
+        
+        });
+        </script>
 
 
 </head>
 
+
+
 <body>
 
-  <section class="masonry-section">
-    <div class="title-area">
-        <h1 class="title-txt">Best Donators</h1>
-        <h2 class="subtitle-txt"><span class="emphasis">Top 11 ~ 100 </span>Donations</h2>
-    </div>
-    <div id="masonryContainer" class="container">
-    </div>
-    <div class="btn-area">
-        <button class="btn-view-more" onclick="javascript:indexViewMore();">
-            <span class="btn-txt">View More</span>
-        </button>
-    </div>
-</section>
+    <div id="header"></div>
+
+    <article id="container">
+        <div class="item">내용</div>
+        <div class="item">내용</div>
+        <div class="item">내용</div>
+        <div class="item">내용</div>
+        <!--게시판 다음 페이지 갖고오기-->
+    </article>
+
+    <div id="footer"></div>
 </body>
+
 </html>

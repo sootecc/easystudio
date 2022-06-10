@@ -1,6 +1,5 @@
-
-    /* 메인 모든 카테고리 */
-a{
+/* 메인 모든 카테고리 */
+a {
     text-decoration: none;
 }
 
@@ -31,7 +30,7 @@ a{
     display: block;
 }
 
-.h_center{
+.h_center {
     position: relative;
     display: flex;
     flex-direction: row;
@@ -39,25 +38,28 @@ a{
     justify-content: center;
 }
 
-.h_row_center{
+.h_row_center {
     position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.h_column_center{
+.h_column_center {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.h_hover_button:hover{
+.h_hover_button:hover {
     background-color: rgb(245, 247, 248);
 }
 
-.h_header_button:hover{
+.h_header_button:hover {
     background-color: rgb(245, 247, 248);
     border-radius: 4px;
 }
+
+
+
