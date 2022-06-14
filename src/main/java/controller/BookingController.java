@@ -43,9 +43,7 @@ public class BookingController extends HttpServlet{
 		String res_date = request.getParameter("date");
 		int totalCount = pdao.selectCount(map);
 		
-		ServletContext application = getServletContext(); 
-		int pageSize = 20; 	//출력 레코드 수
-		int blockPage = 5;	//페이지 수 
+		int pageSize = 10; 	//출력 레코드 수
 		
 		//System.out.println(pageSize);
 		//System.out.println(blockPage);
@@ -65,30 +63,15 @@ public class BookingController extends HttpServlet{
 		map.put("start", start); 
 		map.put("end", end);
 		
-		//System.out.println(start);
-		//System.out.println(end);
 		
-		
-		
-		/* 페이징 처리 부분 end */ 
-			
-		// 게시물 목록을 받아오기 (DAO 객체에 작업을 전달 )
-		//boardLists는 DB의 레코드를 담은 DTO객체(5개) 를 담고 있다. 
+
 	
         List<placeDTO> boardLists = pdao.selectListPage(map);  // 게시물 목록 받기
+        List<placeDTO> resLists = pdao.selectListPage(map);  // 게시물 목록 받기
+        
         pdao.close(); // DB 연결 닫기
 	
-        //뷰페이지에 전달 할 매개변수들을 추가 
-        //utils.BoardPage : 패이징 처리하는 클래스, pagingStr 메소드 : static 메소드
-        String pagingImg = BoardPage.pagingStr(totalCount, pageSize,
-            blockPage, pageNum, "/list.do");  // 바로가기 영역 HTML 문자열
-    
-	    //View페이지로 변수의 값을 전달 
-	    
-	    map.put("pagingImg", pagingImg);
-	    map.put("totalCount", totalCount);
-	    map.put("pageSize", pageSize);
-	    map.put("pageNum", pageNum); 
+        
 		
 		
 		
@@ -100,6 +83,7 @@ public class BookingController extends HttpServlet{
 		
 		
 		request.setAttribute("boardLists", boardLists);  //DataBase에서 Select한 결과값
+		request.setAttribute("resLists", resLists);
 	    request.setAttribute("map", map);
 		request.setAttribute("udto", udto);
 		request.setAttribute("pdto", pdto);

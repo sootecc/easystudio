@@ -24,8 +24,7 @@
     <div id="header"
         style="position: absolute; width: 100%; top: 0px; z-index: 1000; transform: translateZ(0px); background-color: transparent;">
         <div class="h_row_center" style="position: relative; width: 1160px; height: 80px;">
-            <a href="index.jsp"><img src="" onclick=""
-                    style="width: 130px; height: 32px; cursor: pointer; background-color: brown;"></a>
+            <a href="index.jsp" style="text-decoration: none;"><p style="font-size: 30px; width: 130px; height: 32px; cursor: pointer; ">easystudio</p></a>
             <div class="h_row_center" style="position: absolute; right: 0px; height: 100%; z-index: 10000;">
                 <div class="h_row_center category_all_button" style="height: 100%;">
                     <div onclick="hourplace_v2.userLog('W', '/', 'click', 'tab', 'all');"

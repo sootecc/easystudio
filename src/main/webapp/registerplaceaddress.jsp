@@ -11,6 +11,8 @@
     <link href="css/login.css" type="text/css" rel="stylesheet">
 
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    
+    
 <script type="text/javascript">
 
 
@@ -22,6 +24,8 @@ $("#footer").load("./footer.jsp");
 
 });
 </script>
+
+
 
     <title>easystudio</title>
     <script type= "text/javascript">
@@ -75,9 +79,13 @@ $("#footer").load("./footer.jsp");
 <% if(id == null || id.equals("")){%>
     
     <div id="header"></div>
+    
+    
 <%}else{%>
- <div id="headerlogin"></div>
- <%} %>
+
+ 	<div id="headerlogin"></div>
+ 
+<%} %>
     
     <br>
     <p style="text-align: center; font-size: 24px;">장소 등록하기</p>
@@ -106,11 +114,11 @@ $("#footer").load("./footer.jsp");
 			<br>
 		
 		
-        <input type="text" id="address" placeholder="주소">
-        <input type="text" id="detailAddress" placeholder="상세주소">
-        <br>
-        <input type="button" onclick="execDaumPostcode()" value="주소 검색하기">
-        <button type ="submit" style="">등록하기</button>
+	        <input type="text" id="address" name="address" placeholder="주소">
+	        <input type="text" id="detailAddress" name="detailAddress" placeholder="상세주소">
+	        <br>
+	        <input type="button" onclick="execDaumPostcode()" value="주소 검색하기">
+	        <button type ="submit" style="">등록하기</button>
         </form>
         
         <div id="map" style="width:100%;height:400px;margin-top:10px;display:none"></div>

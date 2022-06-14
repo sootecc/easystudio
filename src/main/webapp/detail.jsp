@@ -1,3 +1,4 @@
+<%@page import="place.placeDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 
@@ -32,8 +33,7 @@ $("#footer").load("./footer.jsp");
 	String id = "";
 	
 		id = (String)session.getAttribute("userID");
-	
-	
+
 %>
 <body>
 
@@ -44,7 +44,6 @@ $("#footer").load("./footer.jsp");
 <%}else{%>
  <div id="headerlogin"></div>
  <%} %>
- 
  
  
  
@@ -117,7 +116,7 @@ $("#footer").load("./footer.jsp");
                             </div>
                             <div class="h_place_select_button h_row_center" style="width: 180px; cursor: pointer;">
                                 <p>
-                                    리뷰 <label style="font-weight: 500; color: rgb(158, 164, 170);">62</label>
+                                    리뷰 <label style="font-weight: 500; color: rgb(158, 164, 170);"></label>
                                 </p>
                             </div>
                             
@@ -142,32 +141,54 @@ $("#footer").load("./footer.jsp");
                 <p style="margin-top: 40px; font-size: 24px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 1.33; letter-spacing: -0.3px; color: rgb(27, 29, 31);">
                     위치
                 </p>
-                <div id="map" style="width:500px;height:400px;"></div>
-                        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e575717f81a20e7f099338ffa1121c3f"></script>
-                        <script>
-                            var container = document.getElementById('map');
-                            
-                            var options = {
-                                center: new kakao.maps.LatLng(37.47880, 126.8789),           //위도, 경도 설정하는 곳
-                                level: 3
-                            };
-                            var map = new kakao.maps.Map(container, options);
-                            var markerPosition  = new kakao.maps.LatLng(37.47880, 126.8789); 
-                            var marker = new kakao.maps.Marker({position: markerPosition});
-                            marker.setMap(map);
-                            var iwContent = '<div style="padding:5px;">KOSMO! <br><a href="https://map.kakao.com/link/map/한국소트프웨어인재개발원,37.47880,126.8789" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/KOSMO!,37.47880,126.8789" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                            iwPosition = new kakao.maps.LatLng(37.47880, 126.8789); //인포윈도우 표시 위치입니다
 
-                            // 인포윈도우를 생성합니다
-                            var infowindow = new kakao.maps.InfoWindow({
-                                position : iwPosition, 
-                                content : iwContent 
-                            });
-                            
-                            // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-                            infowindow.open(map, marker); 
 
-                        </script>
+                
+                
+           	<div id="map" style="width:500px;height:400px;"></div>
+           	
+           	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e575717f81a20e7f099338ffa1121c3f&libraries=services"></script>
+		    <script>
+		    var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+		    mapOption = {
+		        center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+		        level: 3 // 지도의 확대 레벨
+		    };  
+
+			// 지도를 생성합니다    
+			var map = new kakao.maps.Map(mapContainer, mapOption); 
+	
+			// 주소-좌표 변환 객체를 생성합니다
+			var geocoder = new kakao.maps.services.Geocoder();
+	
+			// 주소로 좌표를 검색합니다
+			geocoder.addressSearch('<c:out value="${location}"/>', function(result, status) {
+
+		    // 정상적으로 검색이 완료됐으면 
+		     if (status === kakao.maps.services.Status.OK) {
+
+		        var coords = new kakao.maps.LatLng(result[0].y, result[0].x);
+
+		        // 결과값으로 받은 위치를 마커로 표시합니다
+		        var marker = new kakao.maps.Marker({
+		            map: map,
+		            position: coords
+		        });
+
+		        // 인포윈도우로 장소에 대한 설명을 표시합니다
+		        var infowindow = new kakao.maps.InfoWindow({
+		            content: '<div style="width:150px;text-align:center;padding:6px 0;">이 근처에요!</div>'
+		        });
+		        infowindow.open(map, marker);
+
+		        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+		        map.setCenter(coords);
+		    } 
+		});    
+		    
+		        
+		                    
+		    </script>
 
                 <p style="margin-top: 20px; font-size: 15px; font-weight: normal; font-stretch: normal; font-style: normal; line-height: 1.6; letter-spacing: normal; color: rgb(69, 75, 80);">
                     자세한 주소는 호스트 승인 후, 문의 가능합니다.
@@ -195,7 +216,7 @@ $("#footer").load("./footer.jsp");
                                 장소 리뷰
                             </p>
                             <p style="margin-left: 9px; font-size: 20px; font-weight: bold; font-stretch: normal; font-style: normal; line-height: 0.7; letter-spacing: -0.67px; text-align: center; color: rgb(36, 111, 248);">
-                                리뷰 개수 (count)
+                                
                             </p>
 
                             
@@ -216,7 +237,7 @@ $("#footer").load("./footer.jsp");
                                     <div class="review_star" style="margin-top: 0px;">
                                         <span style="width: 100%;"></span>
                                     </div>
-                                    <p style="margin-left: 6px; font-style: normal; font-weight: 500; font-size: 12px; color: rgb(158, 164, 170);">
+                                    <p style="margin-left: 6px; font-style: normal; xfont-weight: 500; font-size: 12px; color: rgb(158, 164, 170);">
                                         ${row.reviewDate}
                                     </p>
                                 </div>
@@ -230,7 +251,7 @@ $("#footer").load("./footer.jsp");
                                     
                                 </div> 
                             </div>
-                            </c:forEach> 
+                        </c:forEach> 
                             
                             
                             

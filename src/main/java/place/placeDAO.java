@@ -145,7 +145,26 @@ public class placeDAO extends DBConnPool{
 	    	return dto; 
 	    }
 	    
-	    
+	    public String selectLocation(String placeID) {
+	    	placeDTO dto = new placeDTO();
+	    	String query = "SELECT location FROM ezplace WHERE placeID = ?"; 
+	    	
+	    	try {
+	    		psmt = con.prepareStatement(query); 
+	    		psmt.setString(1,placeID); 
+	    		rs = psmt.executeQuery(); 
+	    		
+	    		if (rs.next()) {
+	                dto.setLocation(rs.getString(9));
+	    			
+	    		}
+	    		
+	    	}catch (Exception e) {
+	    		e.printStackTrace();
+	    	}
+	    	
+	    	return dto.getLocation(); 
+	    }
 	    
 	    
 	    public placeDTO selectView_user(String userID) {

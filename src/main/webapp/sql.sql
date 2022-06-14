@@ -47,7 +47,6 @@ create table review(
     reviewIndex int not null primary key,
     reviewPlaceID int not null, 
     reviewUserID varchar2(20),
-    reviewDate date,
     reviewText varchar2(2000)
 );
 

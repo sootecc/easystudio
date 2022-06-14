@@ -61,8 +61,7 @@ public class WriteController extends HttpServlet {
 				}
 			
 			
-			//2.파일 업로드 외 처리 (Form의 변수 값 처리 )=============================
-				//폼에서 넘겨받은 값을 받아서 DTO(VO) 에 Setter 주입을 하고 DAO에 Insert 메소드에 던져줌. 
+			
 				placeDTO dto = new placeDTO (); 
 				dto.setPlaceTitle(mr.getParameter("placeTitle")); 
 				dto.setUserID(mr.getParameter("userID")); 
@@ -70,6 +69,7 @@ public class WriteController extends HttpServlet {
 				dto.setPlaceRule(mr.getParameter("placeRule")); 
 				dto.setPrice(Integer.parseInt(mr.getParameter("price")));
 				dto.setLocation(mr.getParameter("address"));
+				
 				//원본 파일 이름과 저장 파일이름 설정
 				String fileName = mr.getFilesystemName("ofile");  //clinet의 첨부파일의 물리적 주소 
 					System.out.println("ofile : " + fileName);  //주석 처리

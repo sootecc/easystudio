@@ -43,6 +43,7 @@ public class userDAO extends DBConnPool{
 		//사용자 인증 (MemberCheck.jsp) 에서 사용하는 메소드
 		*/
 	public int userCheck(String id, String passwd) {
+		
 		int x = -1;   //x = -1  : 아이디가 존재하지 않음 , 
 					  //x = 1   : 인증 성공, 
 		

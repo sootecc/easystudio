@@ -93,7 +93,8 @@ $("#footer").load("./footer.jsp");
                 등록한 장소
             </p>
                
-<c:choose>  
+	<c:choose> 
+	<!-- ------------------------------------------------------ -->
 	<c:when test="${ empty boardLists }">  <!-- 게시물이 없을 때 -->
         <tr>
             <td colspan="6" align="center">
@@ -101,19 +102,26 @@ $("#footer").load("./footer.jsp");
             </td>
         </tr>
     </c:when>
+    <!-- ------------------------------------------------------ -->
     <c:otherwise>
     <div style="position: relative;" >
-       	<c:forEach items="${ boardLists }" var="row" varStatus="loop">
-            <c:set var ="name" value="${udto.userID }"/>
-            <c:if test="${name eq row.userID}">
-            	<a href="./view.do?placeID=${row.placeID}" style="text-decoration: none;">
-                	<img class="content" src="/images/uploads/${row.sfile}" style="height:60px; width: 100px;">
-            	</a>
-            </c:if>
-          </c:forEach>   
-          </div>
+   	
+   	<!-- 장소 리스트 변수에 저장 -->
+    <c:forEach items="${ boardLists }" var="row" varStatus="loop">
+    <c:set var ="name" value="${udto.userID }"/>
+    
+    <!-- 두 값 비교 -->
+    <c:if test="${name eq row.userID}">
+    <a href="./view.do?placeID=${row.placeID}" style="text-decoration: none;">
+    <img class="content" src="/images/uploads/${row.sfile}" style="height:60px; width: 100px;">
+    </a>
+   	</c:if>
+    
+    </c:forEach>   
+    </div>
     </c:otherwise> 
-</c:choose>
+    <!-- ------------------------------------------------------ -->
+	</c:choose>
 
 			<div style="margin-top: 40px; height: 1px; background-color: rgb(231, 234, 238);"></div>
 			<br>
@@ -136,8 +144,8 @@ $("#footer").load("./footer.jsp");
             </p>
 
 		    <div style="position: relative;" >
-		       	<c:forEach items="${ boardLists }" var="row" varStatus="loop">
-		            <c:set var ="name" value="${udto.userID }"/>
+		       	<c:forEach items="${ resLists }" var="row" varStatus="loop">
+		            <c:set var ="name" value="<%= id %>"/>
 		            <c:if test="${name eq row.reservationUser}">
 		            	<a href="./view.do?placeID=${row.placeID}" style="text-decoration: none;">
 		                	<img class="content" src="/images/uploads/${row.sfile}" style="height:60px; width: 100px;">
