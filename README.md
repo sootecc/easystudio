@@ -1,5 +1,5 @@
 # easystudio
-p easystudio project
+easystudio project
 
 <h3>발표 자료 & 시연 영상</h3>
 <br>
